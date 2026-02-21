@@ -19,7 +19,8 @@ def sweep_line(courses: list[Course]) -> dict[Course, set[Course]]:
     events.sort()
     
     active_courses: set[Course] = set()
-    #* {} is faster than dict() (at least twice)
+    # {} is faster than dict() (at least twice)
+    #*defaultdict is faster than setdefault
     interval_graph: defaultdict[Course, set[Course]] = defaultdict(set)
     
     for _, _, event_type, section in events:
