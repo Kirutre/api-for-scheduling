@@ -27,10 +27,10 @@ def sweep_line(courses: list[Course]) -> dict[Course, set[Course]]:
             if active_courses:
                 #* .setdefault return the existing value for the key, if the key don't exist it inserts the key and the default_value (set in this case
                 #* .update add items form another set to the current set
-                interval_graph.setdefault(section, set()).update(active_courses)
+                interval_graph[section].update(active_courses)
                 
                 for active in active_courses:
-                    interval_graph.setdefault(active, set()).add(section)
+                    interval_graph[active].add(section)
                 
             active_courses.add(section)
 
