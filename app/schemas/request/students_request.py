@@ -3,9 +3,8 @@ from pydantic import BaseModel
 
 class Student(BaseModel):
     id: int
-    name: str | None = None
-    courses: list[str]
+    courses: list[int]
 
 
-class StudentsRequest(BaseModel):
+class StudentRequest(BaseModel):
     students: list[Student]

@@ -4,14 +4,13 @@ from pydantic import BaseModel
 from utils.weekday_enum import Weekday
 
 
-class Course(BaseModel):
+class CourseSection(BaseModel):
     id: int
-    name: str
-    section: str
+    course_id: int 
     weekday: Weekday
     start_time: time
     end_time: time
     
 
-class CoursesRequest(BaseModel):
-    courses: list[Course]
+class CourseSectionRequest(BaseModel):
+    courses: list[CourseSection]
