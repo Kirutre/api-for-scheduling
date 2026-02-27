@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class Event(Enum):
+class Event(IntEnum):
     END = 0
     START = 1

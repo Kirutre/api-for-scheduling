@@ -1,5 +1,5 @@
-from schemas.request.courses_request import CourseSection
-from utils.event_enum import Event
+from app.schemas.request.courses_request import CourseSection
+from app.utils.event_enum import Event
 
 
 def create_events_timeline(course_section_list: list[CourseSection]) -> list[tuple]:
@@ -40,4 +40,9 @@ def create_interval_graph(course_section_list: list[CourseSection]) -> dict[int,
         else:
             active_sections.discard(course_section_id)
     
-    return dict(sorted(interval_graph.items(), key=lambda value: len(value[1])))
+    return dict(
+        sorted(
+            interval_graph.items(),
+            key=lambda value: len(value[1])
+        )
+    )

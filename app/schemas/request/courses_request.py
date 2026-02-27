@@ -1,7 +1,7 @@
 from datetime import time
 from pydantic import BaseModel
 
-from utils.weekday_enum import Weekday
+from app.utils.weekday_enum import Weekday
 
 
 class CourseSection(BaseModel):
