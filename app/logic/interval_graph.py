@@ -1,6 +1,6 @@
 from app.schemas.request.courses_request import CourseSection
-from app.utils.event_enum import Event
 
+from app.utils.event_enum import Event
 
 def create_events_timeline(course_section_list: list[CourseSection]) -> list[tuple]:
     START = Event.START
