@@ -22,7 +22,7 @@ def create_events_timeline(course_section_list: list[CourseSection]) -> list[tup
 def create_interval_graph(course_section_list: list[CourseSection]) -> dict[int, set]:
     START = Event.START
     
-    events_timeline = create_events_timeline(course_section_list)
+    events_timeline: list[tuple] = create_events_timeline(course_section_list)
     
     active_sections: set = set()
     interval_graph: dict[int, set] = {course_section.id: set() for course_section in course_section_list}

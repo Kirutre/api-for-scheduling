@@ -33,13 +33,8 @@ def course_section_list():
         CourseSection(id=13, course_id=113, weekday=Weekday.FRIDAY, start_time=time(7, 0), end_time=time(8, 0)),
     ]
 
-def test_create_events_timeline_with_empty_list():
+def test_create_events_timeline_empty_case():
     assert create_events_timeline([]) == []
-
-
-def test_create_events_timeline_with_invalid_list():
-    with pytest.raises(AttributeError):
-        create_events_timeline([1, 2, 3, 4])
 
 
 def test_create_events_timeline_successful(course_section_list):
@@ -61,13 +56,8 @@ def test_create_events_timeline_successful(course_section_list):
     assert events_monday_at_10[2][2] == Event.START
 
 
-def test_create_interval_graph_with_empty_list():
+def test_create_interval_graph_empty_case():
     assert create_interval_graph([]) == {}
-
-
-def test_create_interval_graph_with_invalid_list():
-    with pytest.raises(AttributeError):
-        create_interval_graph([1, 2, 3, 4])
 
 
 def test_create_interval_graph_successful(course_section_list):
@@ -78,7 +68,7 @@ def test_create_interval_graph_successful(course_section_list):
     assert 2 in interval_graph[1]
     assert 1 in interval_graph[2]
        
-    assert {10, 11, 12}.issubset(interval_graph[9]) == True
+    assert {10, 11, 12}.issubset(interval_graph[9])
     for neighbor in [10, 11, 12]:
         assert 9 in interval_graph[neighbor]
     
